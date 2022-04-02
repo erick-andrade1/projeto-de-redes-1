@@ -1,7 +1,7 @@
 import config from "../config";
 
-// const baseURL = config.BASE_API_URL;
-const baseURL = config.BASE_NETWORK_URL;
+const baseURL = config.BASE_API_URL;
+//const baseURL = config.BASE_NETWORK_URL;
 
 export default {
   name: "homeService",

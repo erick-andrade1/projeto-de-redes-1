@@ -4,6 +4,16 @@
     <div>
       {{ data }}
     </div>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,21 +22,21 @@
 import homeService from "../services/homeService";
 
 export default {
-  name: 'HomeView',
-  data(){
+  name: "HomeView",
+  data() {
     return {
       data: undefined,
-    }
+    };
   },
   methods: {
-    getAll(){
+    getAll() {
       homeService.get().then((response) => {
         this.data = response;
-      })
-    }
+      });
+    },
   },
-  created(){
+  created() {
     this.getAll();
-  }
-}
+  },
+};
 </script>
