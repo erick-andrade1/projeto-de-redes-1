@@ -32,6 +32,7 @@ export default {
     getAll() {
       homeService.get().then((response) => {
         this.data = response;
+        this.$toast.success(`Hey! I'm here`, { position: "bottom-right" });
       });
     },
   },
