@@ -1,7 +1,5 @@
 <template>
-  <div class="Header">
-  </div>
-  <router-view class="px-4 py-4"/>
+  <router-view class="px-4 py-4" />
 </template>
 
 <script>
@@ -15,9 +13,10 @@ export default {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
-.Header{
+.Header {
   background: black;
   height: 50px;
 }
