@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <div>Opa iae</div>
     <div>
       {{ data }}
@@ -7,11 +7,23 @@
     <div class="card" style="width: 18rem">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="2"
+            v-model="myMessage"
+          ></textarea>
+        </div>
+        <a href="#" class="btn btn-primary" @click="postMessage(myMessage)"
+          >Go somewhere</a
+        >
+      </div>
+    </div>
+    <div v-if="messages && messages.length > 0">
+      <div v-for="(message, index) in messages" :key="index">
+        {{ message }}
       </div>
     </div>
   </div>
@@ -26,6 +38,8 @@ export default {
   data() {
     return {
       data: undefined,
+      myMessage: undefined,
+      messages: [],
     };
   },
   methods: {
@@ -33,6 +47,12 @@ export default {
       homeService.get().then((response) => {
         this.data = response;
         this.$toast.success(`Hey! I'm here`, { position: "bottom-right" });
+      });
+    },
+    postMessage(myMessage) {
+      homeService.post(myMessage).then((response) => {
+        this.myMessage = undefined;
+        this.messages.push(response.message);
       });
     },
   },

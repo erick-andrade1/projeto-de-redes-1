@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <div class="Header">
+  </div>
+  <router-view class="px-4 py-4"/>
 </template>
 
 <script>
@@ -10,11 +12,14 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+}
+
+.Header{
+  background: black;
+  height: 50px;
 }
 
 nav {

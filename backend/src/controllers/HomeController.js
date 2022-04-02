@@ -8,4 +8,16 @@ module.exports = class HomeController {
       res.status(500).json({ error: error });
     }
   }
+  static async post(req, res) {
+    if (req.body) {
+      try {
+        const body = req.body;
+        res.send(body);
+      } catch (error) {
+        res.status(500).json({ error: error });
+      }
+    } else {
+      res.status(500).json({ error: error });
+    }
+  }
 };
