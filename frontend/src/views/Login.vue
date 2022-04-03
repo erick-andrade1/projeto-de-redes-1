@@ -3,14 +3,16 @@
     class="d-flex justify-content-center backgroundImage"
     style="height: 100%"
   >
-    <div class="card p-4 input-group cardStyle row">
-      <div class="loginLabel">Login</div>
-      <div class="col-12 mb-3">
+    <div class="card p-5 input-group cardStyle row">
+      <div class="loginLabel">LOGIN</div>
+      <div class="col-12 mb-4">
         <div class="labelStyle">Email:</div>
         <input
           type="text"
           class="form-control"
+          placeholder="Digite seu email..."
           style="border: none; border-bottom: 1px solid #dcdcdc"
+          v-model="data.email"
         />
       </div>
       <div class="col-12 mb-3">
@@ -18,26 +20,37 @@
         <input
           class="form-control"
           type="password"
-          name=""
-          id=""
+          placeholder="Digite sua senha..."
           style="border: none; border-bottom: 1px solid #dcdcdc"
+          v-model="data.password"
         />
       </div>
-      <div class="text-center col-12 mt-3">
-        <button class="btn buttonStyle" @click="onSelectedLink('home')">
-          Entrar
-        </button>
+      <div class="text-center col-12 pt-5">
+        <button class="btn buttonStyle" @click="validator(data)">Entrar</button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { loginValidator } from "../utils/validators/loginValidator";
+
 export default {
   name: "login",
   data() {
-    return {};
+    return {
+      data: {},
+    };
   },
   methods: {
+    validator(data) {
+      let errorMessage = loginValidator(data);
+      console.log(errorMessage);
+      if (errorMessage) {
+        this.$toast.error(errorMessage);
+      } else {
+        this.onSelectedLink("home");
+      }
+    },
     onSelectedLink(link) {
       this.$router.push({ name: link });
     },
@@ -47,7 +60,8 @@ export default {
 <style scoped>
 .loginLabel {
   font-family: sans-serif;
-  font-size: 34px;
+  font-weight: bold;
+  font-size: 30px;
   color: #2c3e50;
   line-height: 19px;
   display: flex;
@@ -66,22 +80,20 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (max-width: 1920px) {
-  .cardStyle {
-    width: 400px;
-    height: 320px;
-    position: absolute;
-    top: 30%;
-  }
+
+.cardStyle {
+  width: 450px;
+  height: 400px;
+  position: absolute;
+  top: 30%;
 }
 
 .buttonStyle {
   font-family: sans-serif;
   font-size: 16px;
   padding: 8px;
-  border-radius: 10px;
   color: white;
-  background: rgba(167, 38, 184, 0.849);
+  background: rgba(47, 32, 179, 0.849);
   border: none;
   width: 100px;
   transition: 0.4s;
@@ -89,8 +101,8 @@ export default {
 
 .buttonStyle:hover {
   transition: 0.4s;
-  color: rgba(167, 38, 184, 0.849);
+  color: rgba(47, 32, 179, 0.849);
   background: white;
-  border: 1px solid rgba(167, 38, 184, 0.849);
+  border: 1px solid rgba(47, 32, 179, 0.849);
 }
 </style>

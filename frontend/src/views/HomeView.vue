@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <navbar></navbar>
+  <div class="px-4 py-4">
     <div>Opa iae</div>
+    <i class="bi bi-123"></i>
     <div>
       {{ data }}
     </div>
@@ -33,8 +35,14 @@
 //Services:
 import homeService from "../services/homeService";
 
+//Components:
+import navbar from "../layout/NavBar.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    navbar,
+  },
   data() {
     return {
       data: undefined,

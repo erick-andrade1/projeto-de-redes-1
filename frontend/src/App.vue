@@ -1,5 +1,5 @@
 <template>
-  <router-view class="px-4 py-4" />
+  <router-view/>
 </template>
 
 <script>
