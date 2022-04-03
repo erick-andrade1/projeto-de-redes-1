@@ -52,7 +52,8 @@ export default {
 }
 .navBar {
   height: 5.735140771637122vh;
-  border-bottom: 2px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+
 }
 .navSearch-style {
   border: none;
