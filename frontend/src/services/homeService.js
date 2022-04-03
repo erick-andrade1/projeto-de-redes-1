@@ -28,7 +28,8 @@ export default {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        message: data,
+        message: data.message,
+        messageDate: data.messageDate,
       }),
     }).then(function (response) {
       if (response && response.status && response.status === 200) {

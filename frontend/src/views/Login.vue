@@ -25,8 +25,8 @@
           v-model="data.password"
         />
       </div>
-      <div class="text-center col-12 pt-5">
-        <button class="btn buttonStyle" @click="validator(data)">Entrar</button>
+      <div class="d-flex justify-content-center col-12 pt-5">
+        <button class="btn btn-grad" @click="validator(data)">Entrar</button>
       </div>
     </div>
   </div>
@@ -88,21 +88,31 @@ export default {
   top: 30%;
 }
 
-.buttonStyle {
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #fc00ff 0%,
+    #00dbde 51%,
+    #fc00ff 100%
+  );
+}
+.btn-grad {
+  width: 200px;
+  padding: 8px;
+  text-align: center;
   font-family: sans-serif;
   font-size: 16px;
-  padding: 8px;
+  transition: 0.5s;
+  background-size: 200% auto;
   color: white;
-  background: rgba(47, 32, 179, 0.849);
-  border: none;
-  width: 100px;
-  transition: 0.4s;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
 }
 
-.buttonStyle:hover {
-  transition: 0.4s;
-  color: rgba(47, 32, 179, 0.849);
-  background: white;
-  border: 1px solid rgba(47, 32, 179, 0.849);
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 </style>
