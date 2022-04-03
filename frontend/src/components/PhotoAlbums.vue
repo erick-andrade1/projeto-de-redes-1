@@ -36,8 +36,8 @@ export default {
   .albumPhoto {
     background-size: cover;
     background-repeat: no-repeat;
-    width: 25.6vh;
-    height: 15.826446280991735vh;
+    width: 53.5vh;
+    height: 20.826446280991735vh;
   }
 }
 

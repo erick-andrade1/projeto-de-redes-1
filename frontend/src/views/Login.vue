@@ -81,11 +81,22 @@ export default {
   background-size: cover;
 }
 
-.cardStyle {
-  width: 450px;
-  height: 400px;
-  position: absolute;
-  top: 30%;
+@media (max-width: 1920px) {
+  .cardStyle {
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    top: 30%;
+  }
+}
+
+@media (max-width: 1360px) {
+  .cardStyle {
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    top: 20%;
+  }
 }
 
 .btn-grad {
