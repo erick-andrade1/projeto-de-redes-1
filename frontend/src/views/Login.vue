@@ -44,7 +44,6 @@ export default {
   methods: {
     validator(data) {
       let errorMessage = loginValidator(data);
-      console.log(errorMessage);
       if (errorMessage) {
         this.$toast.error(errorMessage);
       } else {
