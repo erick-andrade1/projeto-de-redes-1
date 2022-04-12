@@ -6,8 +6,8 @@ const baseURL = config.BASE_API_URL;
 export default {
   name: "homeService",
 
-  get: function () {
-    return fetch(baseURL + "home/", {
+  get: function (id) {
+    return fetch(baseURL + "home/" + id, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

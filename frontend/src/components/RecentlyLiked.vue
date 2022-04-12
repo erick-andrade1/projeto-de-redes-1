@@ -1,7 +1,11 @@
 <template>
   <div class="card">
     <div class="baseBottomBorder fontStyle">CURTIDAS RECENTES</div>
-    <div class="row baseBottomBorder">
+    <div
+      class="row baseBottomBorder"
+      style="cursor: pointer"
+      @click="changeState(1)"
+    >
       <div class="col-2">
         <img class="iconStyle" src="../../public/img/icon1.png" alt="" />
       </div>
@@ -12,7 +16,11 @@
         </div>
       </div>
     </div>
-    <div class="row baseBottomBorder">
+    <div
+      class="row baseBottomBorder"
+      style="cursor: pointer"
+      @click="changeState(2)"
+    >
       <div class="col-2">
         <img class="iconStyle" src="../../public/img/icon2.jpg" alt="" />
       </div>
@@ -24,7 +32,11 @@
         </div>
       </div>
     </div>
-    <div class="row baseBottomBorder">
+    <div
+      class="row baseBottomBorder"
+      style="cursor: pointer"
+      @click="changeState(3)"
+    >
       <div class="col-2">
         <img class="iconStyle" src="../../public/img/icon3.jpg" alt="" />
       </div>
@@ -36,7 +48,11 @@
         </div>
       </div>
     </div>
-    <div class="row baseBottomBorder">
+    <div
+      class="row baseBottomBorder"
+      style="cursor: pointer"
+      @click="changeState(4)"
+    >
       <div class="col-2">
         <img class="iconStyle" src="../../public/img/icon4.jpg" alt="" />
       </div>
@@ -54,6 +70,11 @@
 <script>
 export default {
   name: "recently-liked",
+  methods: {
+    changeState(id) {
+      this.$emit("changeState", id);
+    },
+  },
 };
 </script>
 

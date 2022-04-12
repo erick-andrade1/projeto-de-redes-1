@@ -5,7 +5,7 @@
   >
     <div class="card p-5 input-group cardStyle row">
       <div class="loginLabel">LOGIN</div>
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-4 mt-3">
         <div class="labelStyle">Email:</div>
         <input
           type="text"
@@ -15,7 +15,7 @@
           v-model="data.email"
         />
       </div>
-      <div class="col-12 mb-3">
+      <div class="col-12 mb-3 mt-3">
         <div class="labelStyle">Senha:</div>
         <input
           class="form-control"
@@ -25,7 +25,7 @@
           v-model="data.password"
         />
       </div>
-      <div class="d-flex justify-content-center col-12 pt-5">
+      <div class="d-flex justify-content-center col-12 pt-5 mt-4">
         <button class="btn btn-grad" @click="validator(data)">Entrar</button>
       </div>
     </div>
@@ -82,19 +82,19 @@ export default {
 
 @media (max-width: 1920px) {
   .cardStyle {
-    width: 450px;
-    height: 400px;
+    width: 400px;
+    height: 480px;
     position: absolute;
-    top: 30%;
+    top: 25%;
   }
 }
 
 @media (max-width: 1360px) {
   .cardStyle {
     width: 450px;
-    height: 400px;
+    height: 480px;
     position: absolute;
-    top: 20%;
+    top: 15%;
   }
 }
 

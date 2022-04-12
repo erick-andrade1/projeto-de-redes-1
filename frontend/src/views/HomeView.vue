@@ -149,7 +149,10 @@
         <div class="col-4">
           <friend-list class="mb-4" />
           <photo-albums class="mb-4" />
-          <recently-liked class="mb-4" />
+          <recently-liked @changeState="changeModalState" class="mb-4" />
+        </div>
+        <div v-if="data">
+          <show-info v-bind:data="data" />
         </div>
       </div>
     </div>
@@ -165,6 +168,7 @@ import Navbar from "../layout/NavBar.vue";
 import FriendList from "../components/FriendList.vue";
 import PhotoAlbums from "../components/PhotoAlbums.vue";
 import RecentlyLiked from "../components/RecentlyLiked.vue";
+import ShowInfo from "../components/ShowInfo.vue";
 
 export default {
   name: "HomeView",
@@ -173,6 +177,7 @@ export default {
     FriendList,
     PhotoAlbums,
     RecentlyLiked,
+    ShowInfo,
   },
   data() {
     return {
@@ -185,8 +190,11 @@ export default {
     };
   },
   methods: {
-    getAll() {
-      homeService.get().then((response) => {
+    changeModalState(id) {
+      this.getAll(id);
+    },
+    getAll(id) {
+      homeService.get(id).then((response) => {
         this.data = response;
       });
     },
@@ -200,9 +208,6 @@ export default {
         this.$toast.error(`Digite algo!`, { position: "bottom-right" });
       }
     },
-  },
-  created() {
-    this.getAll();
   },
 };
 </script>

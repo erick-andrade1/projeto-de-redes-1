@@ -13,6 +13,7 @@
     "bootstrap-icons": "^1.8.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.3",
+    "mdb-ui-kit": "^3.11.0",
     "pm2": "^5.2.0",
     "stylus": "^0.57.0",
     "stylus-loader": "^3.0.2",
@@ -23,9 +24,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0"
+    "@vue/cli-service": "~5.0.0"
   },
   "browserslist": [
     "> 1%",
