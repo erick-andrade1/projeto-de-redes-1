@@ -151,8 +151,8 @@
           <photo-albums class="mb-4" />
           <recently-liked @changeState="changeModalState" class="mb-4" />
         </div>
-        <div v-if="data">
-          <show-info v-bind:data="data" />
+        <div class="col-12">
+          <show-info v-if="showInfo" v-bind:data="data" />
         </div>
       </div>
     </div>
@@ -187,6 +187,7 @@ export default {
         messageDate: new Date().toLocaleString("pt-BR"),
       },
       messages: [],
+      showInfo: false,
     };
   },
   methods: {
@@ -196,6 +197,7 @@ export default {
     getAll(id) {
       homeService.get(id).then((response) => {
         this.data = response;
+        this.showInfo = true;
       });
     },
     postMessage(myMessage) {
