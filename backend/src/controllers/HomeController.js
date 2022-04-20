@@ -1,4 +1,4 @@
-const HomeRepository = require('../repositories/HomeRepository');
+const HomeRepository = require("../repositories/HomeRepository");
 
 module.exports = class HomeController {
   static async getAllSites(req, res) {
