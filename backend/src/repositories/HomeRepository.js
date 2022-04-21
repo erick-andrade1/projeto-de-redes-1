@@ -1,4 +1,5 @@
-//O repositório, responsável por fazer a análise do parametro passado pelo usuário e retornar aquilo que ele busca:
+//O repositório, responsável por fazer a análise do parametro passado pelo usuário 
+//e retornar aquilo que ele busca:
 module.exports = class HomeRepository {
   static async getAllSites(params) {
     const myPage = [

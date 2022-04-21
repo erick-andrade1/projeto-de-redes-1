@@ -4,7 +4,8 @@ const express = require("express");
 //chamamos o roteador do express
 const router = express.Router();
 
-//Aqui chamamos o controlador da nossa aplicação, responsável por fazer a chamada ao repositório
+//Aqui chamamos o controlador da nossa aplicação,
+//responsável por fazer a chamada ao repositório
 const HomeController = require("../controllers/HomeController");
 
 //Rotas criadas:
