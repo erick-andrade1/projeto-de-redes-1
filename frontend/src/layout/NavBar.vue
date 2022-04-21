@@ -4,8 +4,8 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 48 48"
-        width="48px"
-        height="48px"
+        width="38px"
+        height="38px"
       >
         <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z" />
         <path
@@ -51,7 +51,7 @@ export default {
   justify-content: center;
 }
 .navBar {
-  height: 5.735140771637122vh;
+  height: 6.835140771637122vh;
   border-bottom: 1px solid #dcdcdc;
 
 }
