@@ -1,6 +1,9 @@
 const HomeRepository = require("../repositories/HomeRepository");
 
+//Nosso controlador fazer as chamadas e requisições necessárias
 module.exports = class HomeController {
+
+  //Método de chamar os sites curtidos pelo usuário
   static async getAllSites(req, res) {
     try {
       const obj = await HomeRepository.getAllSites(req.params.id);
@@ -9,6 +12,8 @@ module.exports = class HomeController {
       res.status(500).json({ error: error });
     }
   }
+  
+  //Método responsável por postar as mensagens que o usuários digitou
   static async post(req, res) {
     if (req.body) {
       try {
