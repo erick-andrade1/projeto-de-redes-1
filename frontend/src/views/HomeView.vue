@@ -1,158 +1,160 @@
 <template>
-  <navbar></navbar>
   <div>
-    <div class="planoDeFundo">
-      <div class="px-3" style="position: relative; top: 86%">
-        <img class="userPhoto" src="../../public/img/userImage.jpg" alt="" />
+    <navbar></navbar>
+    <div>
+      <div class="planoDeFundo">
+        <div class="px-3" style="position: relative; top: 86%">
+          <img class="userPhoto" src="../../public/img/userImage.jpg" alt="" />
+        </div>
       </div>
-    </div>
-    <div class="row userInfo mb-5">
-      <div class="row col-6">
-        <div class="col-12 userName">Jorge Silva</div>
-        <div class="col-12 userOffice">Programador</div>
+      <div class="row userInfo mb-5">
+        <div class="row col-6">
+          <div class="col-12 userName">Jorge Silva</div>
+          <div class="col-12 userOffice">Programador</div>
+        </div>
+        <div class="col-6 text-center pt-3">
+          <div class="userPosts">523 Post</div>
+          <div class="userPosts">326 Following</div>
+          <div class="userPosts">620 Followers</div>
+        </div>
       </div>
-      <div class="col-6 text-center pt-3">
-        <div class="userPosts">523 Post</div>
-        <div class="userPosts">326 Following</div>
-        <div class="userPosts">620 Followers</div>
-      </div>
-    </div>
-    <div class="px-5">
-      <div class="row">
-        <div class="col-8">
-          <div class="card">
-            <div class="card-body">
-              <div class="form-group pb-4">
-                <textarea
-                  class="form-control"
-                  style="background: #f3f5f7"
-                  cols="30"
-                  rows="5"
-                  placeholder="Digite algo para postar...."
-                  v-model="myMessage.message"
-                ></textarea>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div
-                    class="d-flex justify-content-between pt-2"
-                    style="width: 120px"
-                  >
-                    <div>
-                      <i class="bi bi-camera iconBorder"></i>
-                    </div>
-                    <div>
-                      <i class="bi bi-share iconBorder"></i>
-                    </div>
-                    <div>
-                      <i class="bi bi-geo-alt iconBorder"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 d-flex justify-content-end">
-                  <button
-                    href="#"
-                    class="btn buttonStyle"
-                    @click="postMessage(myMessage)"
-                  >
-                    Postar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row px-2" v-if="messages && messages.length > 0">
-            <div
-              class="card mt-4"
-              v-for="(message, index) in messages"
-              :key="index"
-            >
+      <div class="px-5">
+        <div class="row">
+          <div class="col-8">
+            <div class="card">
               <div class="card-body">
-                <div class="row baseBottomBorder">
-                  <div class="col-1">
-                    <img
-                      class="userPhotoPost"
-                      src="../../public/img/userImage.jpg"
-                    />
-                  </div>
-                  <div class="col-10 mb-2">
-                    <div class="userNamePost">Jorge Silva</div>
-                    <div class="userDataPost">
-                      {{ message.messageDate }}
-                    </div>
-                  </div>
+                <div class="form-group pb-4">
+                  <textarea
+                    class="form-control"
+                    style="background: #f3f5f7"
+                    cols="30"
+                    rows="5"
+                    placeholder="Digite algo para postar...."
+                    v-model="myMessage.message"
+                  ></textarea>
                 </div>
-                <div class="row pt-2 pb-2 baseBottomBorder">
-                  <div class="col-12 text-justify">
-                    {{ message.message }}
-                  </div>
-                </div>
-                <div class="row pt-2 baseBottomBorder">
-                  <div class="col-3" style="width: 100px">
-                    <div style="display: inline-block">
-                      <i class="bi bi-heart"></i>
-                    </div>
+                <div class="row">
+                  <div class="col-6">
                     <div
-                      style="
-                        display: inline-block;
-                        padding-left: 5px;
-                        padding-bottom: 4px;
-                      "
+                      class="d-flex justify-content-between pt-2"
+                      style="width: 120px"
                     >
-                      Gostei
+                      <div>
+                        <i class="bi bi-camera iconBorder"></i>
+                      </div>
+                      <div>
+                        <i class="bi bi-share iconBorder"></i>
+                      </div>
+                      <div>
+                        <i class="bi bi-geo-alt iconBorder"></i>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-3" style="width: 120px">
-                    <div style="display: inline-block">
-                      <i class="bi bi-chat"></i>
-                    </div>
-                    <div
-                      style="
-                        display: inline-block;
-                        padding-left: 5px;
-                        padding-bottom: 4px;
-                      "
+
+                  <div class="col-6 d-flex justify-content-end">
+                    <button
+                      href="#"
+                      class="btn buttonStyle"
+                      @click="postMessage(myMessage)"
                     >
-                      Comentar
-                    </div>
-                  </div>
-                  <div class="col-3" style="width: 140px">
-                    <div style="display: inline-block">
-                      <i class="bi bi-send"></i>
-                    </div>
-                    <div
-                      style="
-                        display: inline-block;
-                        padding-left: 5px;
-                        padding-bottom: 4px;
-                      "
-                    >
-                      Compartilhar
-                    </div>
+                      Postar
+                    </button>
                   </div>
                 </div>
               </div>
-              <div class="input-group p-1 pb-2">
-                <textarea
-                  class="form-control"
-                  style="background: #f3f5f7"
-                  placeholder="Adicione seu comentário...."
-                  cols="30"
-                  rows="1"
-                ></textarea>
+            </div>
+
+            <div class="row px-2" v-if="messages && messages.length > 0">
+              <div
+                class="card mt-4"
+                v-for="(message, index) in messages"
+                :key="index"
+              >
+                <div class="card-body">
+                  <div class="row baseBottomBorder">
+                    <div class="col-1">
+                      <img
+                        class="userPhotoPost"
+                        src="../../public/img/userImage.jpg"
+                      />
+                    </div>
+                    <div class="col-10 mb-2">
+                      <div class="userNamePost">Jorge Silva</div>
+                      <div class="userDataPost">
+                        {{ message.messageDate }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pt-2 pb-2 baseBottomBorder">
+                    <div class="col-12 text-justify">
+                      {{ message.message }}
+                    </div>
+                  </div>
+                  <div class="row pt-2 baseBottomBorder">
+                    <div class="col-3" style="width: 100px">
+                      <div style="display: inline-block">
+                        <i class="bi bi-heart"></i>
+                      </div>
+                      <div
+                        style="
+                          display: inline-block;
+                          padding-left: 5px;
+                          padding-bottom: 4px;
+                        "
+                      >
+                        Gostei
+                      </div>
+                    </div>
+                    <div class="col-3" style="width: 120px">
+                      <div style="display: inline-block">
+                        <i class="bi bi-chat"></i>
+                      </div>
+                      <div
+                        style="
+                          display: inline-block;
+                          padding-left: 5px;
+                          padding-bottom: 4px;
+                        "
+                      >
+                        Comentar
+                      </div>
+                    </div>
+                    <div class="col-3" style="width: 140px">
+                      <div style="display: inline-block">
+                        <i class="bi bi-send"></i>
+                      </div>
+                      <div
+                        style="
+                          display: inline-block;
+                          padding-left: 5px;
+                          padding-bottom: 4px;
+                        "
+                      >
+                        Compartilhar
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group p-1 pb-2">
+                  <textarea
+                    class="form-control"
+                    style="background: #f3f5f7"
+                    placeholder="Adicione seu comentário...."
+                    cols="30"
+                    rows="1"
+                  ></textarea>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-4">
-          <friend-list class="mb-4" />
-          <photo-albums class="mb-4" />
-          <recently-liked @changeState="changeModalState" class="mb-4" />
-        </div>
-        <div class="col-12">
-          <show-info v-if="showInfo" v-bind:data="data" />
+          <div class="col-4">
+            <friend-list class="mb-4" />
+            <photo-albums class="mb-4" />
+            <recently-liked @changeState="changeModalState" class="mb-4" />
+          </div>
+          <div class="col-12">
+            <show-info v-if="showInfo" v-bind:data="data" />
+          </div>
         </div>
       </div>
     </div>

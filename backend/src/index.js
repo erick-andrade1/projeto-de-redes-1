@@ -2,6 +2,7 @@
 
 //Aqui chamamos a biblioteca express, responsável por subir o servidor:
 const express = require('express');
+const bodyParser = require('body-parser');
 
 //Cors serve para manter o controle de acesso a rota
 const cors = require("cors");
@@ -12,6 +13,7 @@ const PORT = 3001;
 
 //Acesso ao controle do origins, nesse caso permitimos tudo
 app.use(cors({'Access-Control-Allow-Origin': '*'}));
+app.use(bodyParser.json({}));
 
 //Import de rotas:
 const Home = require('./router/home');

@@ -1,6 +1,6 @@
 const HomeRepository = require("../repositories/HomeRepository");
 
-//Nosso controlador fazer as chamadas e requisições necessárias
+//Nosso controlador para fazer as chamadas e requisições necessárias
 module.exports = class HomeController {
 
   //Método de chamar os sites curtidos pelo usuário
@@ -22,8 +22,6 @@ module.exports = class HomeController {
       } catch (error) {
         res.status(500).json({ error: error });
       }
-    } else {
-      res.status(500).json({ error: error });
     }
   }
 };
